@@ -15,6 +15,15 @@ final class RegistrationController extends AbstractController
 {
     #[Route(path: "/api/v1/register", methods: ["POST"])]
     #[OA\Tag(name: 'auth')]
+    #[OA\RequestBody(
+        description: "Json to submit the applicantion",
+        content: new OA\JsonContent(
+            properties: [
+                new OA\Property(property: "email", type: "string", example: "user@email.com"),
+                new OA\Property(property: "password", type: "string", example: "123456"),
+            ]
+        )
+    )]
     public function register(
         Request $request,
         UserRepository $userRepository,

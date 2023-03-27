@@ -35,9 +35,6 @@ class CompanyController extends AbstractController
         return $this->jsonResponse('list of comapnies', $serializer->serialize($companies, 'json'), 200);
     }
 
-    /**
-     * @Route("/api/companies", methods={"POST"})
-     */
     #[Route(path: "/companies", methods: ["POST"])]
     #[OA\Post(description: "Create company.")]
     #[OA\RequestBody(
