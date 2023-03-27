@@ -318,8 +318,7 @@ class JobController extends AbstractController
         $job->addApplicant($applicant);
         $repository->save($job, true);
 
-        return $this->jsonResponse('Successfuly Submitted application', $data, 200);
-        ;
+        return $this->jsonResponse('Successfuly Submitted application', $data, 200);;
     }
     #[Route(path: "/job_applicant", methods: ["GET"])]
     #[OA\Get(description: "Return List of jobs and their applicants")]
@@ -344,21 +343,24 @@ class JobController extends AbstractController
             }
         }
 
-        return $this->jsonResponse('List of jobs and their applicants', $data, 200);
-        ;
+        return $this->jsonResponse('List of jobs and their applicants', $data, 200);;
     }
-    #[Route(path: "/job_applicant", methods: ["DELETE"])]
+    #[Route(path: "/job_applicant/{jobId}/{applicantId}", methods: ["DELETE"])]
     #[OA\Delete(description: "Delete job application by their IDs")]
-    public function DeleteJobsApplicants(JobRepository $repository, SerializerInterface $serializer, ApplicantRepository $applicantRepository, Request $request): JsonResponse
+    public function DeleteJobsApplicants(JobRepository $repository, string $jobId, string $applicantId, SerializerInterface $serializer, ApplicantRepository $applicantRepository, Request $request): JsonResponse
     {
-        $data = json_decode($request->getContent(), true);
-        $job = $repository->find(Uuid::fromString($data['job_id']));
-        ;
-        $applicant = $applicantRepository->find(Uuid::fromString($data['applicant_id']));
 
+        $job = $repository->find(Uuid::fromString($jobId));
+        if (!$job) {
+            return $this->jsonResponse('No Job record found', ["id" => $jobId], 404);
+        }
+        $applicant = $applicantRepository->find(Uuid::fromString($applicantId));
+        if (!$applicant) {
+            return $this->jsonResponse('No Applicant record Found', ["id" => $applicantId], 404);
+        }
         $job->removeApplicant($applicant);
         $repository->save($job, true);
 
-        return $this->jsonResponse('Deleted Scuccesfully', $serializer->serialize($job, 'json'));
+        return $this->jsonResponse('Removed Application Scuccesfully', $serializer->serialize($job, 'json'));
     }
 }
