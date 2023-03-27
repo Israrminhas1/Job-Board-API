@@ -99,6 +99,7 @@ Run PHPStan:
 ```
 
 <h2>Avaialble Routes</h2>
+
 * `POST /api/v1/auth/register`: Creates a new user account.
 * `POST /api/v1/login_check`: Logs in a user and returns a JWT token.
 * `GET /api/v1/companies`: Returns a list of all companies.
