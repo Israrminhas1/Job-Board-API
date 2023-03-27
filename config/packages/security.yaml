@@ -42,7 +42,7 @@ security:
         - { path: ^/api/login, roles: PUBLIC_ACCESS }
         - { path: ^/api/doc, roles: PUBLIC_ACCESS }
         - { path: ^/api/v1/register, roles: PUBLIC_ACCESS }
-        - { path: ^/api/v1/job-list, roles: PUBLIC_ACCESS }
+        - { path: ^/api/v1/jobs$, roles: PUBLIC_ACCESS , methods: [GET]}
         - { path: ^/api,       roles: IS_AUTHENTICATED_FULLY }
 when@test:
     security:

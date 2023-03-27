@@ -114,7 +114,7 @@ Run PHPStan:
 
 * `DELETE /api/v1/companies/{id}`: Deletes a specific company.
 
-* `GET /api/v1/job-list`: Returns a list of all jobs (Public).
+* `GET /api/v1/jobs`: Returns a list of all jobs also accepts query params (Public).
 
 * `POST /api/v1/jobs`: Creates a new job.
 
