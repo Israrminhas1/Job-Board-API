@@ -318,7 +318,8 @@ class JobController extends AbstractController
         $job->addApplicant($applicant);
         $repository->save($job, true);
 
-        return $this->jsonResponse('Successfuly Submitted application', $data, 200);;
+        return $this->jsonResponse('Successfuly Submitted application', $data, 200);
+        ;
     }
     #[Route(path: "/job_applicant", methods: ["GET"])]
     #[OA\Get(description: "Return List of jobs and their applicants")]
@@ -343,13 +344,14 @@ class JobController extends AbstractController
             }
         }
 
-        return $this->jsonResponse('List of jobs and their applicants', $data, 200);;
+        return $this->jsonResponse('List of jobs and their applicants', $data, 200);
+        ;
     }
+
     #[Route(path: "/job_applicant/{jobId}/{applicantId}", methods: ["DELETE"])]
     #[OA\Delete(description: "Delete job application by their IDs")]
     public function DeleteJobsApplicants(JobRepository $repository, string $jobId, string $applicantId, SerializerInterface $serializer, ApplicantRepository $applicantRepository, Request $request): JsonResponse
     {
-
         $job = $repository->find(Uuid::fromString($jobId));
         if (!$job) {
             return $this->jsonResponse('No Job record found', ["id" => $jobId], 404);
@@ -361,6 +363,6 @@ class JobController extends AbstractController
         $job->removeApplicant($applicant);
         $repository->save($job, true);
 
-        return $this->jsonResponse('Removed Application Scuccesfully', $serializer->serialize($job, 'json'));
+        return $this->jsonResponse('Removed Application Successfully', $serializer->serialize($job, 'json'));
     }
 }
