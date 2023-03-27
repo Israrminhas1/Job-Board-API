@@ -100,9 +100,9 @@ Run PHPStan:
 
 <h2>Avaialble Routes</h2>
 
-* `POST /api/v1/auth/register`: Creates a new user account.
+* `POST /api/v1/auth/register`: Creates a new user account (Public).
 
-* `POST /api/v1/login_check`: Logs in a user and returns a JWT token.
+* `POST /api/v1/login_check`: Logs in a user and returns a JWT token (Public).
 
 * `GET /api/v1/companies`: Returns a list of all companies.
 
@@ -114,7 +114,7 @@ Run PHPStan:
 
 * `DELETE /api/v1/companies/{id}`: Deletes a specific company.
 
-* `GET /api/v1/jobs`: Returns a list of all jobs.
+* `GET /api/v1/job-list`: Returns a list of all jobs (Public).
 
 * `POST /api/v1/jobs`: Creates a new job.
 

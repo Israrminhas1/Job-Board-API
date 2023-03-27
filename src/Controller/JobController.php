@@ -26,7 +26,7 @@ use OpenApi\Attributes as OA;
 class JobController extends AbstractController
 {
     use JsonResponseFormat;
-    #[Route(path: "/jobs", methods: ["GET"])]
+    #[Route(path: "/job-list", methods: ["GET"])]
     #[OA\Get(description: "Return all the Jobs with optional filters")]
     #[OA\QueryParameter(name: "title", example: "jobName")]
     #[OA\QueryParameter(name: "company", example: "xyz")]
@@ -316,8 +316,7 @@ class JobController extends AbstractController
         $job->addApplicant($applicant);
         $repository->save($job, true);
 
-        return $this->jsonResponse('Successfuly Submitted application', $data, 200);
-        ;
+        return $this->jsonResponse('Successfuly Submitted application', $data, 200);;
     }
     #[Route(path: "/job_applicant", methods: ["GET"])]
     #[OA\Get(description: "Return List of jobs and their applicants")]
@@ -342,8 +341,7 @@ class JobController extends AbstractController
             }
         }
 
-        return $this->jsonResponse('List of jobs and their applicants', $data, 200);
-        ;
+        return $this->jsonResponse('List of jobs and their applicants', $data, 200);;
     }
 
     #[Route(path: "/job_applicant/{jobId}/{applicantId}", methods: ["DELETE"])]
