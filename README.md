@@ -99,25 +99,25 @@ Run PHPStan:
 ```
 
 <h2>Avaialble Routes</h2>
-`POST /api/v1/auth/register`: Creates a new user account.
-`POST /api/v1/login_check`: Logs in a user and returns a JWT token.
-`GET /api/v1/companies`: Returns a list of all companies.
-`POST /api/v1/companies`: Creates a new company.
-`GET /api/v1/companies/{id}`: Returns a specific company.
-`PUT /api/v1/companies/{id}`: Updates a specific company.
-`DELETE /api/v1/companies/{id}`: Deletes a specific company.
-`GET /api/v1/jobs`: Returns a list of all jobs.
-`POST /api/v1/jobs`: Creates a new job.
-`GET /ap/v1i/jobs/{id}`: Returns a specific job.
-`GET /api/v1/jobs/{id}/applicants`: Returns a list of applicants for a specific job.
-`PUT /api/v1/jobs/{id}`: Updates a specific job.
-`DELETE /api/v1/jobs/{id}`: Deletes a specific job.
-`GET /api/v1/applicants`: Returns a list of all applicants.
-`POST /api/v1/applicants`: Creates a new applicant.
-`GET /api/v1/applicants/{id}`: Returns a specific applicant.
-`GET /api/v1/applicants/{id}/jobs`: Returns a list of jobs applied for by a specific applicant.
-`PUT /api/v1/applicants/{id}`: Updates a specific applicant.
-`DELETE /api/v1/applicants/{id}`: Deletes a specific applicant.
-`GET /api/v1/job_applicants`: Returns a list of all applications.
-`POST /api/v1/job_applicants`: Submits a new job application.
-`DELETE /api/v1/job_applicants/{jobId}/{applicantId}`: Deletes an existing job application.
+* `POST /api/v1/auth/register`: Creates a new user account.
+* `POST /api/v1/login_check`: Logs in a user and returns a JWT token.
+* `GET /api/v1/companies`: Returns a list of all companies.
+* `POST /api/v1/companies`: Creates a new company.
+* `GET /api/v1/companies/{id}`: Returns a specific company.
+* `PUT /api/v1/companies/{id}`: Updates a specific company.
+* `DELETE /api/v1/companies/{id}`: Deletes a specific company.
+* `GET /api/v1/jobs`: Returns a list of all jobs.
+* `POST /api/v1/jobs`: Creates a new job.
+* `GET /ap/v1i/jobs/{id}`: Returns a specific job.
+* `GET /api/v1/jobs/{id}/applicants`: Returns a list of applicants for a specific job.
+* `PUT /api/v1/jobs/{id}`: Updates a specific job.
+* `DELETE /api/v1/jobs/{id}`: Deletes a specific job.
+* `GET /api/v1/applicants`: Returns a list of all applicants.
+* `POST /api/v1/applicants`: Creates a new applicant.
+* `GET /api/v1/applicants/{id}`: Returns a specific applicant.
+* `GET /api/v1/applicants/{id}/jobs`: Returns a list of jobs applied for by a specific applicant.
+* `PUT /api/v1/applicants/{id}`: Updates a specific applicant.
+* `DELETE /api/v1/applicants/{id}`: Deletes a specific applicant.
+* `GET /api/v1/job_applicants`: Returns a list of all applications.
+* `POST /api/v1/job_applicants`: Submits a new job application.
+* `DELETE /api/v1/job_applicants/{jobId}/{applicantId}`: Deletes an existing job application.
