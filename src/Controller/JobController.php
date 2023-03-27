@@ -316,7 +316,8 @@ class JobController extends AbstractController
         $job->addApplicant($applicant);
         $repository->save($job, true);
 
-        return $this->jsonResponse('Successfuly Submitted application', $data, 200);;
+        return $this->jsonResponse('Successfuly Submitted application', $data, 200);
+        ;
     }
     #[Route(path: "/job_applicant", methods: ["GET"])]
     #[OA\Get(description: "Return List of jobs and their applicants")]
@@ -341,7 +342,8 @@ class JobController extends AbstractController
             }
         }
 
-        return $this->jsonResponse('List of jobs and their applicants', $data, 200);;
+        return $this->jsonResponse('List of jobs and their applicants', $data, 200);
+        ;
     }
 
     #[Route(path: "/job_applicant/{jobId}/{applicantId}", methods: ["DELETE"])]
