@@ -186,6 +186,7 @@ class JobController extends AbstractController
             if (!$company) {
                 return $this->jsonResponse('No Company record found', ["id" => $data['company_id']], 404);
             };
+            $job->setCompany($company);
         }
 
         if (isset($data['title'])) {
@@ -199,9 +200,6 @@ class JobController extends AbstractController
         }
         if (isset($data['experience'])) {
             $job->setExperience($data['experience']);
-        }
-        if (isset($data['company_id'])) {
-            $job->setCompany($company);
         }
 
         $violations = $validator->validate($job);
@@ -318,8 +316,7 @@ class JobController extends AbstractController
         $job->addApplicant($applicant);
         $repository->save($job, true);
 
-        return $this->jsonResponse('Successfuly Submitted application', $data, 200);
-        ;
+        return $this->jsonResponse('Successfuly Submitted application', $data, 200);;
     }
     #[Route(path: "/job_applicant", methods: ["GET"])]
     #[OA\Get(description: "Return List of jobs and their applicants")]
@@ -344,8 +341,7 @@ class JobController extends AbstractController
             }
         }
 
-        return $this->jsonResponse('List of jobs and their applicants', $data, 200);
-        ;
+        return $this->jsonResponse('List of jobs and their applicants', $data, 200);;
     }
 
     #[Route(path: "/job_applicant/{jobId}/{applicantId}", methods: ["DELETE"])]
