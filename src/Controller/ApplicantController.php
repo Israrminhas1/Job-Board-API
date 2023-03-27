@@ -182,8 +182,8 @@ class ApplicantController extends AbstractController
         }
 
         $repository->remove($applicant, true);
-
-        return $this->jsonResponse('Deleted Scuccesfully', $serializer->serialize($applicant, 'json'));
+        $data = ['id' => (string)$id];
+        return $this->jsonResponse('Deleted Successfully', $data);
     }
 
     #[Route(path: "/applicants/{id}/jobs", methods: ["GET"])]
