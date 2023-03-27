@@ -51,6 +51,7 @@ class JobController extends AbstractController
         $queryBuilder = $entityManager
             ->getRepository(Job::class)
             ->createQueryBuilder('j')
+            ->select('j.id', 'j.title', 'j.description', 'j.required_skills', 'j.experience', 'c.name as company_name')
             ->leftJoin('j.company', 'c', Join::ON);
         if ($title !== null) {
             $queryBuilder->andWhere('j.title LIKE :title')
