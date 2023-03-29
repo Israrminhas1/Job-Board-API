@@ -28,6 +28,10 @@ Optionally, you can install Symfony CLI, a command-line interface for managing S
 ```shell
 git clone https://gitlab.com/israrminhas99/job-board-api.git
 ```
+or
+```shell
+https://github.com/Israrminhas1/Job-Board-Api.git
+```
 
 2. Access the directory:
 
