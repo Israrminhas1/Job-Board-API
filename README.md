@@ -30,7 +30,7 @@ git clone https://gitlab.com/israrminhas99/job-board-api.git
 ```
 or
 ```shell
-https://github.com/Israrminhas1/Job-Board-Api.git
+https://github.com/Israrminhas1/Job-Board-API.git
 ```
 
 2. Access the directory:
